@@ -47,7 +47,6 @@ public class Main {
                             System.out.println("Wrong input");
                             break;
                         }
-
                         if (!cinema.isSeatTaken(rowNumber, seatNumber)) {
                             Ticket ticket = cinema.buyTicket(rowNumber, seatNumber);
                             System.out.println("Ticket price: $" + ticket.getPrice());
@@ -59,9 +58,9 @@ public class Main {
                 }
                 case 3 -> {
                     System.out.println("Number of purchased tickets: " + cinema.getTicketsSold());
-                    System.out.println("Percentage: " + cinema.getTicketsSold() / cinema.getSeats() * 100);
-                    System.out.println("Current income: " + cinema.getIncome());
-                    System.out.println("Total income: " + cinema.calculateTotalIncome());
+                    System.out.println("Percentage: " + String.format("%.2f", cinema.getTicketsSold() * 1.0 / cinema.getSeats() * 100) + "%");
+                    System.out.println("Current income: $" + cinema.getIncome());
+                    System.out.println("Total income: $" + cinema.calculateTotalIncome());
                 }
             }
 
